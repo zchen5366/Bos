@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>message消息窗口</title>
+<!-- 导入jquery核心类库 -->
+<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+<!-- 导入easyui类库 -->
+<link rel="stylesheet" type="text/css" href="../js/easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="../js/easyui/themes/icon.css">
+<link rel="stylesheet" type="text/css" href="../js/easyui/ext/portal.css">
+<link rel="stylesheet" type="text/css" href="../css/default.css">
+<script type="text/javascript" src="../js/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../js/easyui/ext/jquery.portal.js"></script>
+<script type="text/javascript" src="../js/easyui/ext/jquery.cookie.js"></script>
+
+<link rel="stylesheet" href="../js/ztree/zTreeStyle.css" type="text/css">
+<script type="text/javascript" src="../js/ztree/jquery.ztree.all-3.5.js"></script>
+</head>
+<script type="text/javascript">
+	function error_info(){
+		$.messager.alert("我的消息","消息",'error');
+	}
+	function question_info(){
+		$.messager.alert("我的消息","消息",'question');
+	}
+	function info(){
+		$.messager.alert("我的消息","消息",'info');
+	}
+	function warning_info(){
+		$.messager.alert("我的消息","消息",'warning');
+	}
+	function confirm() {
+		$.messager.confirm('确认对话框', '您想要退出该系统吗？', function(r){
+			alert(r);
+			if (r){
+			    // 退出操作;
+			}
+		});
+	}
+	function prompt() {
+		$.messager.prompt('提示信息', '请输入你的姓名：', function(r){
+			if (r){
+				alert('你的姓名是：' + r);
+			}
+		});
+	}
+	function show() {
+		$.messager.show({
+			title:'我的消息',
+			msg:'消息将在2秒后关闭。',
+			timeout:2000,
+			showType:'show'
+		});
+	}
+</script>
+
+<body>
+	<a class="easyui-linkbutton" data-options="iconCls:'icon-search'" onclick="error_info()" >error_info</a>
+	<a class="easyui-linkbutton" data-options="iconCls:'icon-search'" onclick="question_info()" >question_info</a>
+	<a class="easyui-linkbutton" data-options="iconCls:'icon-search'" onclick="info()" >info</a>
+	<a class="easyui-linkbutton" data-options="iconCls:'icon-search'" onclick="warning_info()" >warning_info</a>
+	<br>
+	<a class="easyui-linkbutton" data-options="iconCls:'icon-search'" onclick="confirm()" >confirm</a>
+	<br>
+	<a class="easyui-linkbutton" data-options="iconCls:'icon-search'" onclick="prompt()" >prompt</a>
+	<br>
+	<a class="easyui-linkbutton" data-options="iconCls:'icon-search'" onclick="show()" >show</a>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

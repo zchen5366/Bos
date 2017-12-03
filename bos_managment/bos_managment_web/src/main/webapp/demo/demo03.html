@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>layout</title>
+<!-- 导入jquery核心类库 -->
+<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+<!-- 导入easyui类库 -->
+<link rel="stylesheet" type="text/css" href="../js/easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="../js/easyui/themes/icon.css">
+<link rel="stylesheet" type="text/css" href="../js/easyui/ext/portal.css">
+<link rel="stylesheet" type="text/css" href="../css/default.css">
+<script type="text/javascript" src="../js/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../js/easyui/ext/jquery.portal.js"></script>
+<script type="text/javascript" src="../js/easyui/ext/jquery.cookie.js"></script>
+</head>
+<script type="text/javascript">
+	function addtabs() {
+		//判断选项卡是否存在
+		var flag = $('#tab').tabs('exists','新选项卡');
+		//如果存在就不要选中
+		if(flag) {
+			$('#tab').tabs('select','新选项卡')
+		}else {
+			//不存在就添加
+			$('#tab').tabs('add',{
+				title: '新选项卡',
+				selected: true
+			});
+		}
+	}
+</script>
+
+<body class="easyui-layout">
+    <div data-options="region:'north',title:'North Title',split:true" style="height:100px;"></div>   
+    <div data-options="region:'south',title:'South Title',split:true" style="height:100px;"></div>   
+    <div data-options="region:'east',iconCls:'icon-reload',title:'East',split:true" style="width:100px;"></div>   
+    <div data-options="region:'west',title:'West',split:true" style="width:200px;">
+    	<div class="easyui-accordion" data-options="fit:true" >
+    		<div title="面板1" data-options="iconCls:'icon-ok'">
+    			<a id="btn" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'" onclick="addtabs()">添加选项卡</a>  
+    		</div>
+    		<div title="面板2" data-options="iconCls:'icon-add'">天亮了2</div>
+    		<div title="面板3" data-options="iconCls:'icon-edit'">天亮了3</div>
+    	</div>
+    </div>   
+    <div data-options="region:'center',title:'center title'" style="padding:5px;background:#eee;">
+    	<div class="easyui-tabs" data-options="fit:true" id="tab" >
+    		<div title="选项卡1" data-options="iconCls:'icon-ok',closable:true ">天亮了1</div>
+    		<div title="选项卡2" data-options="iconCls:'icon-add',closable:true">天亮了2</div>
+    		<div title="选项卡3" data-options="iconCls:'icon-edit',closable:true">天亮了3</div>
+    	</div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
